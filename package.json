@@ -1,0 +1,17 @@
+{
+  "name": "Oh my food!",
+  "version": "1.0.0",
+  "description": "Site de réservation de menus de restaurants parisiens",
+  "main": "index.js",
+  "homepage": "https://kldvl.github.io/",
+  "scripts": {
+    "sass": "sass --watch ./sass/index.scss:./public/css/style.css",
+    "prefix": "postcss ./public.css/style.css --use autoprefixer -d ./public/css/prefixed/"
+  },
+  "author": "Kevin / Laura",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kldvl/OC_P3_ohmyfood.git"
+  }
+}

@@ -1,0 +1,58 @@
+.fa-heart {
+  overflow: hidden;
+  display: block;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+.fa-heart::after {
+  content: "\f004";
+  display: block;
+  font-weight: 900;
+  position: absolute;
+  background: linear-gradient($primary, $secondary);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  top: 0;
+  transition: all 0.5s ease-in-out;
+  height: 0%;
+  width: 100%;
+}
+.fa-heart:hover::after {
+  height: 100%;
+}
+
+// Keyframes animations
+
+@keyframes disappear {
+  0%,
+  99% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes loader {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(20%);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes menucards {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(20%);
+  }
+  100% {
+    opacity: 1;
+  }
+}

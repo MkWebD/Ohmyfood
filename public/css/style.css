@@ -1,0 +1,625 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,900&family=Shrikhand&display=swap");
+.fa-heart {
+  overflow: hidden;
+  display: block;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.fa-heart::after {
+  content: "\f004";
+  display: block;
+  font-weight: 900;
+  position: absolute;
+  background: linear-gradient(#9356dc, #ff79da);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  top: 0;
+  transition: all 0.5s ease-in-out;
+  height: 0%;
+  width: 100%;
+}
+
+.fa-heart:hover::after {
+  height: 100%;
+}
+
+@keyframes disappear {
+  0%, 99% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes loader {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(20%);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes menucards {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(20%);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+}
+
+/* importantion du header */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__logo--text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Shrikhand", cursive;
+  margin: 10px;
+}
+.header__searchbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eaeaea;
+  padding: 15px 0;
+  box-shadow: inset 0px 5px 5px -5px grey;
+  width: 100%;
+}
+.header__searchbar--input {
+  padding-left: 15px;
+  width: 150px;
+  border: none;
+  background-color: #eaeaea;
+}
+.header__intro {
+  background-color: #f6f6f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px 20px;
+  text-align: center;
+  width: 100%;
+}
+.header__intro--text {
+  margin: 20px;
+  font-weight: 300;
+}
+.header__intro--button {
+  color: white;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  background: linear-gradient(#ff79da, #9356dc);
+  border-radius: 25px;
+  box-shadow: 2px 2px 5px grey;
+  margin: 10px 0 20px 0;
+}
+.header__intro--button:hover {
+  background: linear-gradient(#ff93e1, #a16be0);
+  box-shadow: 2px 2px 5px black;
+  cursor: pointer;
+}
+
+.headerpage {
+  display: flex;
+  flex-direction: column;
+}
+.headerpage__logo {
+  display: flex;
+  align-items: center;
+}
+.headerpage__logo--text {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Shrikhand", cursive;
+  transform: translateX(-5%);
+  margin: 10px;
+}
+.headerpage__logo--goback {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10%;
+  font-weight: 900;
+  font-size: 20px;
+}
+.headerpage__img {
+  width: 100%;
+  height: 250px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.headerpage__img.image1 {
+  background-image: url("../images/02_medium/la_palette_du_gout_900x600.jpg");
+}
+.headerpage__img.image2 {
+  background-image: url("../images/02_medium/la_note_enchantee_720x900.jpg");
+}
+.headerpage__img.image3 {
+  background-image: url("../images/02_medium/a_la_francaise_900x600.jpg");
+}
+.headerpage__img.image4 {
+  background-image: url("../images/02_medium/le_delice_des_sens_900x617.jpg");
+}
+
+/* fin du header */
+/* importation du container */
+.functionning {
+  padding: 50px 20px;
+  display: flex;
+  flex-direction: column;
+}
+.functionning__steps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10px;
+}
+.functionning__steps .step {
+  background-color: #f6f6f6;
+  width: 100%;
+  height: 70px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  box-shadow: 2px 2px 10px lightgrey;
+  position: relative;
+}
+.functionning__steps .step:hover {
+  cursor: pointer;
+}
+.functionning__steps .step:hover .step__icon {
+  color: #9356dc;
+}
+.functionning__steps .step__number {
+  height: 25px;
+  width: 25px;
+  padding: 2px;
+  color: white;
+  background-color: #9356dc;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: -10px;
+}
+.functionning__steps .step__icon {
+  color: grey;
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.functionning__steps .step__text {
+  width: 60%;
+}
+
+.restaurant {
+  border-radius: 40px 40px 0 0;
+  margin-top: -40px;
+  background-color: #f6f6f6;
+  position: relative;
+  z-index: 10;
+  padding: 30px 15px;
+  display: flex;
+  flex-direction: column;
+}
+.restaurant__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.restaurant__header--title {
+  font-family: "Shrikhand", cursive;
+}
+.restaurant__header--icon {
+  font-size: 20px;
+  margin-right: 20px;
+  position: relative;
+}
+.restaurant__menu {
+  margin: 25px 0;
+  display: flex;
+  flex-direction: column;
+}
+.restaurant__menu--title {
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 14px;
+  width: 12%;
+  border-bottom: 3px solid #99e2d0;
+  padding-bottom: 3px;
+}
+.restaurant__menu--items {
+  display: flex;
+  flex-direction: column;
+}
+.restaurant__menu--items .item {
+  box-shadow: 2px 2px 10px lightgrey;
+  width: inherit;
+  height: 70px;
+  margin: 10px 0;
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  font-weight: 600;
+  overflow: hidden;
+  position: relative;
+}
+.restaurant__menu--items .item__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  width: 80%;
+}
+.restaurant__menu--items .item__text--title {
+  margin-bottom: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.restaurant__menu--items .item__text--description {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 300;
+  font-size: 14px;
+}
+.restaurant__menu--items .item__validator {
+  position: absolute;
+  display: flex;
+  width: 40%;
+  height: 100%;
+  bottom: 0%;
+  right: -20%;
+  transition: all 0.5s ease-in-out;
+}
+.restaurant__menu--items .item__validator--price {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 0 20px 10px 0;
+}
+.restaurant__menu--items .item__validator--check {
+  background-color: #99e2d0;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.restaurant__menu--items .item__validator--check .fa-check {
+  height: 25px;
+  width: 25px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  color: #99e2d0;
+  transform: rotate(0deg);
+  transition: all 0.5s ease-in-out;
+}
+.restaurant__menu--items .item:hover {
+  cursor: pointer;
+}
+.restaurant__menu--items .item:hover > .item__text {
+  width: 60%;
+}
+.restaurant__menu--items .item:hover > .item__validator {
+  transform: translateX(-50%);
+}
+.restaurant__menu--items .item:hover > .item__validator > .item__validator--check > .fa-check {
+  transform: rotate(360deg);
+}
+.restaurant__button {
+  color: white;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  background: linear-gradient(#ff79da, #9356dc);
+  border-radius: 25px;
+  box-shadow: 2px 2px 5px grey;
+  align-self: center;
+  padding: 0 60px;
+}
+.restaurant__button:hover {
+  background: linear-gradient(#ff93e1, #a16be0);
+  box-shadow: 2px 2px 5px black;
+  cursor: pointer;
+}
+
+.restaurant__menu:nth-of-type(1) {
+  animation: menucards 0.5s 0.5s both;
+}
+
+.restaurant__menu:nth-of-type(2) {
+  animation: menucards 0.5s 1s both;
+}
+
+.restaurant__menu:nth-of-type(3) {
+  animation: menucards 0.5s 1.5s both;
+}
+
+/* fin du container */
+/* importation du footer */
+.footer {
+  background-color: #353535;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.footer__logo {
+  font-family: "Shrikhand", cursive;
+}
+.footer__description {
+  padding-top: 15px;
+}
+.footer__description ul {
+  display: flex;
+  flex-direction: column;
+}
+.footer__description ul li {
+  padding: 5px 0;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+/* fin du footer */
+/*importation de composants */
+.restaurants {
+  display: flex;
+  flex-direction: column;
+  background-color: #f6f6f6;
+  padding: 35px 15px;
+}
+.restaurants .cards .card {
+  margin: 15px 0;
+  width: inherit;
+  height: 220px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 2px 2px 10px lightgrey;
+}
+.restaurants .cards .card__img {
+  width: 100%;
+  height: 70%;
+  border-radius: 20px 20px 0 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.restaurants .cards .card__img.image1 {
+  background-image: url("../images/03_small/la_palette_du_gout_450x300.jpg");
+}
+.restaurants .cards .card__img.image2 {
+  background-image: url("../images/03_small/la_note_enchantee_360x450.jpg");
+}
+.restaurants .cards .card__img.image3 {
+  background-image: url("../images/03_small/a_la_francaise_450x300.jpg");
+}
+.restaurants .cards .card__img.image4 {
+  background-image: url("../images/03_small/le_delice_des_sens_450x308.jpg");
+}
+.restaurants .cards .card__img--label {
+  color: #1b6150;
+  background-color: #99e2d0;
+  max-width: 30%;
+  text-align: center;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+.restaurants .cards .card__description {
+  padding: 0 15px;
+  height: 30%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.restaurants .cards .card__description--text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 14px;
+}
+.restaurants .cards .card__description--text h3 {
+  padding-bottom: 5px;
+}
+.restaurants .cards .card__description--text p {
+  font-weight: 300;
+}
+.restaurants .cards .card__description--heart {
+  font-size: 20px;
+}
+
+.container {
+  font-family: "Shrikhand", cursive;
+  font-size: 50px;
+  margin: auto;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: disappear 3s forwards;
+  z-index: 20;
+}
+
+#oh {
+  color: #9356dc;
+  animation: loader 1s both;
+}
+
+#my {
+  color: #ff79da;
+  animation: loader 1s 1s both;
+}
+
+#food {
+  color: #99e2d0;
+  animation: loader 1s 2s both;
+}
+
+/* fin de composants */
+@media only screen and (max-width: 992px) and (min-width: 769px) {
+  .functionning__steps {
+    display: flex;
+    flex-direction: row;
+  }
+  .functionning__steps .step {
+    justify-content: space-around;
+  }
+
+  .restaurants .cards .card {
+    width: 75%;
+    margin: 20px auto;
+  }
+}
+@media only screen and (min-width: 992px) {
+  body {
+    background-color: #f6f6f6;
+  }
+
+  .main {
+    display: flex;
+    margin: 0 30px;
+    align-items: center;
+  }
+
+  .functionning {
+    width: 25%;
+  }
+
+  .restaurants {
+    width: 75%;
+  }
+  .restaurants .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .restaurants .cards .card {
+    width: 47%;
+  }
+  .restaurants .cards .card__img.image1 {
+    background-image: url("../images/02_medium/la_palette_du_gout_900x600.jpg");
+  }
+  .restaurants .cards .card__img.image2 {
+    background-image: url("../images/02_medium/la_note_enchantee_720x900.jpg");
+  }
+  .restaurants .cards .card__img.image3 {
+    background-image: url("../images/02_medium/a_la_francaise_900x600.jpg");
+  }
+  .restaurants .cards .card__img.image4 {
+    background-image: url("../images/02_medium/le_delice_des_sens_900x617.jpg");
+  }
+
+  .headerpage__img.image1 {
+    background-image: url("../images/01_large/la_palette_du_gout_max.jpg");
+  }
+  .headerpage__img.image2 {
+    background-image: url("../images/01_large/la_note_enchantee_max.jpg");
+  }
+  .headerpage__img.image3 {
+    background-image: url("../images/01_large/a_la_francaise_max.jpg");
+  }
+  .headerpage__img.image4 {
+    background-image: url("../images/01_large/le_delice_des_sens_max.jpg");
+  }
+
+  .functionning__steps .step {
+    justify-content: space-around;
+  }
+
+  .restaurant {
+    justify-content: space-between;
+    padding: 30px;
+  }
+  .restaurant__header {
+    width: 75%;
+    margin: auto;
+  }
+  .restaurant__menu {
+    width: 30%;
+  }
+  .restaurant__button {
+    margin: auto;
+  }
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,22 @@
+.footer {
+  background-color: $darkgrey;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  &__logo {
+    font-family: $font-logo;
+  }
+  &__description {
+    padding-top: 15px;
+    ul {
+      display: flex;
+      flex-direction: column;
+      li {
+        padding: 5px 0;
+        font-size: 14px;
+        font-weight: 300;
+      }
+    }
+  }
+}

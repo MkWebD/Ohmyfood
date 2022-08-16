@@ -1,0 +1,105 @@
+$mobile: 768px !default;
+$tablet: 992px !default;
+
+$mobile-up: "only screen and (min-width: #{$mobile})";
+$mobile-down: "only screen and (max-width: #{$mobile})";
+$tablet-up: "only screen and (min-width: #{$tablet})";
+$tablet-down: "only screen and (max-width: #{$tablet})";
+
+// Affichage tablettes
+
+@media #{$tablet-down} and (min-width: #{$mobile+1}) {
+  .functionning__steps {
+    display: flex;
+    flex-direction: row;
+    .step {
+      justify-content: space-around;
+    }
+  }
+  .restaurants .cards .card {
+    width: 75%;
+    margin: 20px auto;
+  }
+}
+
+// Affichage desktop
+@media #{$tablet-up} {
+  body {
+    background-color: $lightgrey;
+  }
+  .main {
+    display: flex;
+    margin: 0 30px;
+    align-items: center;
+  }
+  .functionning {
+    width: 25%;
+  }
+  .restaurants {
+    width: 75%;
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 100%;
+      .card {
+        width: 47%;
+        &__img {
+          &.image1 {
+            background-image: url("../images/02_medium/la_palette_du_gout_900x600.jpg");
+          }
+          &.image2 {
+            background-image: url("../images/02_medium/la_note_enchantee_720x900.jpg");
+          }
+          &.image3 {
+            background-image: url("../images/02_medium/a_la_francaise_900x600.jpg");
+          }
+          &.image4 {
+            background-image: url("../images/02_medium/le_delice_des_sens_900x617.jpg");
+          }
+        }
+      }
+    }
+  }
+
+  //   Pages restaurants
+  .headerpage {
+    &__img {
+      &.image1 {
+        background-image: url("../images/01_large/la_palette_du_gout_max.jpg");
+      }
+      &.image2 {
+        background-image: url("../images/01_large/la_note_enchantee_max.jpg");
+      }
+      &.image3 {
+        background-image: url("../images/01_large/a_la_francaise_max.jpg");
+      }
+      &.image4 {
+        background-image: url("../images/01_large/le_delice_des_sens_max.jpg");
+      }
+    }
+  }
+  .functionning__steps {
+    .step {
+      justify-content: space-around;
+    }
+  }
+  .restaurant {
+    justify-content: space-between;
+    padding: 30px;
+    &__header {
+      width: 75%;
+      margin: auto;
+    }
+    &__menu {
+      width: 30%;
+    }
+    &__button {
+      margin: auto;
+    }
+  }
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+}
